@@ -17,10 +17,10 @@ struct WeatherManager {
     
     func fetchWeather(city: String) {
         let urlString = String(format: self.weatherUrl, self.openWeatherMapAPIKey, city)
-        performRequest(urlString: urlString)
+        performRequest(with: urlString)
     }
     
-    func performRequest(urlString: String) {
+    func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let dataTask = session.dataTask(with: url, completionHandler: self.handleResponse)
@@ -36,13 +36,13 @@ struct WeatherManager {
         }
         
         if let data = data {
-            if let weather = self.parseJSON(weatherData: data) {
-                self.delegate?.didUpdateWeather(weather: weather)
+            if let weather = self.parseJSON(data) {
+                self.delegate?.didUpdateWeather(weather)
             }
         }
     }
     
-    func parseJSON(weatherData: Data) -> WeatherModel? {
+    func parseJSON(_ weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
