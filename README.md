@@ -1,3 +1,25 @@
+# Clima+
+## Roadmap
+- [ ] Clicking on search will take to a different screen
+- [ ] With search bar on the top, with it focused and keyboard opened
+- [ ] Optional: May be we can suggest cities? After getting the location permission?
+- [ ] When user starts typing, show the city results
+- [ ] Debounce and Pagination if possible
+- [ ] When user clicks on a search result, we set it as default and go back to show the weather of that
+- [ ] Optional: See if the selected city can be persisted
+- [ ] Optional: See if we can show when the data has been updated last
+- [ ] Optional: Give a way for user to manually refresh the data
+- [ ] Optional: Change the background/mode to light or dark based on the time of day of the selected city
+- [ ] Replace the Search Icon with Settings Icon
+	- [ ] Units - C or F toggle
+	- [ ] Mode - light, dark, system or location dependant
+- [ ] Favourites?
+- [ ] Move away from Manager pattern
+	- [ ] No idea what to use
+- [ ] Better way to form a url instead of string interpolation
+- [ ] Detect Network State Change
+
+---
 
 ![App Brewery Banner](Documentation/AppBreweryBanner.png)
 
