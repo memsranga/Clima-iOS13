@@ -13,9 +13,10 @@ struct WeatherManager {
     let openWeatherMapAPIKey = ""
     let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?appid=%@&units=metric&q=%@"
     
+    var delegate: WeatherManagerDelegate? = nil
+    
     func fetchWeather(city: String) {
         let urlString = String(format: self.weatherUrl, self.openWeatherMapAPIKey, city)
-        print(urlString)
         performRequest(urlString: urlString)
     }
     
@@ -35,20 +36,24 @@ struct WeatherManager {
         }
         
         if let data = data {
-            if let jsonString = String(data: data, encoding: .utf8) {
-               print(jsonString)
-                parseJSON(weatherData: data)
-           }
-       }
+            if let weather = self.parseJSON(weatherData: data) {
+                self.delegate?.didUpdateWeather(weather: weather)
+            }
+        }
     }
     
-    func parseJSON(weatherData: Data) {
+    func parseJSON(weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
-            print(decodedData.name)
+            
+            let weather = WeatherModel(city: decodedData.name, temperature: decodedData.main.temp, conditionId: decodedData.weather[0].id)
+            return weather
         } catch {
             print(error)
+            // need to return error as well
+            // so the ViewController can handle it better
+            return nil
         }
     }
 }
