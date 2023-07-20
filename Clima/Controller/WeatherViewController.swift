@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherViewController: UIViewController {
 
+    let weatherManager = WeatherManager()
+    
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -17,6 +19,8 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        weatherManager.fetchWeather(city: "London")
     }
 
 
