@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(_ weather: WeatherModel)
+}
+
 struct WeatherManager {
     // TODO: Fill the below constant with your own OpenWeatherMap api key
     // https://home.openweathermap.org/api_keys
