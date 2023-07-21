@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2601334F2A6A664000EBFE3E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2601334E2A6A664000EBFE3E /* LocationViewController.swift */; };
 		268B19122A6946560042B226 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B19112A6946560042B226 /* WeatherManager.swift */; };
 		268B19142A6954640042B226 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B19132A6954640042B226 /* WeatherData.swift */; };
 		268B19172A6956020042B226 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268B19162A6956020042B226 /* WeatherModel.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2601334E2A6A664000EBFE3E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		268B19112A6946560042B226 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		268B19132A6954640042B226 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		268B19162A6956020042B226 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 				F7534B7574112089A2E716D0 /* Pods-Clima.debug.xcconfig */,
 				D7F878F193C6D87EC9168389 /* Pods-Clima.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAA27B4231BBFAF00365194 /* WeatherViewController.swift */,
+				2601334E2A6A664000EBFE3E /* LocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2601334F2A6A664000EBFE3E /* LocationViewController.swift in Sources */,
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
 				268B19142A6954640042B226 /* WeatherData.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
